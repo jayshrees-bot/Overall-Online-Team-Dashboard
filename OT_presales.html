@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Presales Dashboard · March 2026</title>
+<link rel="stylesheet" href="theme.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="data.js"></script><script src="utils.js"></script>
+</head>
+<body>
+<div id="hdr-mount"></div>
+<div class="page-hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-ey">Quality Assurance · Presales Team</div>
+    <div class="hero-ttl" style="color:#60a5fa;">Presales <em>Dashboard</em></div>
+    <div class="hero-date">March 2026</div>
+    <div class="hero-sub">41 agents · 302 audits · Inbound, Outbound, WhatsApp, OMNI, Clive</div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val white" data-cu="302">302</div><div class="hs-lbl">Audits</div></div>
+      <div class="hs"><div class="hs-val blue" data-cu="90" data-suf="%">90%</div><div class="hs-lbl">Team CQ</div></div>
+      <div class="hs"><div class="hs-val red" data-cu="5">5</div><div class="hs-lbl">NCF</div></div>
+      <div class="hs"><div class="hs-val white" data-cu="41">41</div><div class="hs-lbl">Agents</div></div>
+      <div class="hs"><div class="hs-val green" data-cu="37">37</div><div class="hs-lbl">Zero NCF</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <!-- INSIGHTS -->
+  <div class="sec">
+    <div class="sec-ey">Key Insights</div><div class="sec-ttl">Presales Highlights</div>
+    <div class="ig4">
+      <div class="ic gold"><div class="ic-lbl">⭐ Star of Month</div><div class="ic-val gold">98%</div><div class="ic-sub"><strong>Shirsha_S</strong><br>Clive · 6 audits</div></div>
+      <div class="ic green"><div class="ic-lbl">✅ Zero NCF</div><div class="ic-val green">37</div><div class="ic-sub">37 of 41 agents maintained zero NCF</div></div>
+      <div class="ic red"><div class="ic-lbl">⚠️ Needs Focus</div><div class="ic-val red">63%</div><div class="ic-sub"><strong>Chaitali_Ma</strong><br>Clive · 2 NCF</div></div>
+      <div class="ic orange"><div class="ic-lbl">🔴 Top Error</div><div class="ic-val orange">183</div><div class="ic-sub"><strong>Soft Skills</strong> — Personalisation gap across all channels</div></div>
+    </div>
+  </div>
+  <!-- SUB-TEAM -->
+  <div class="sec">
+    <div class="sec-ey">Sub-team Breakdown</div><div class="sec-ttl">Performance by Channel</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th style="text-align:left;">Sub-team</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead><tbody><tr><td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2563eb;margin-right:8px;"></span>Presale - Inbound</td><td>86</td><td><span class="ncf-ok">0</span></td><td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="93"></div></div><span class="pct cg">93%</span></div></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#16a34a;margin-right:8px;"></span>WhatsApp</td><td>106</td><td><span class="ncf-ok">0</span></td><td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="92"></div></div><span class="pct cg">92%</span></div></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0891b2;margin-right:8px;"></span>OMNI</td><td>20</td><td><span class="ncf-ok">0</span></td><td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="92"></div></div><span class="pct cg">92%</span></div></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6d28d9;margin-right:8px;"></span>Presale - Outbound</td><td>30</td><td><span class="ncf-ok">0</span></td><td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="90"></div></div><span class="pct cg">90%</span></div></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#7c3aed;margin-right:8px;"></span>Clive</td><td>60</td><td><span class="ncf-bad">5</span></td><td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="83"></div></div><span class="pct cgg">83%</span></div></td></tr>
+</tbody></table></div>
+  </div>
+  <!-- AGENT TABLE -->
+  <div class="sec">
+    <div class="sec-ey">Agent Performance</div><div class="sec-ttl">Individual CQ Scores</div>
+    <div class="sec-sub">All 41 Presales agents sorted highest to lowest. Use filter to view by sub-team.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;" id="stFilter"></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ</th></tr></thead><tbody id="agentBody"><tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">1</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">SS</div><div><div class="anm">Shirsha_S</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="98"></div></div><span class="pct cg">98%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">2</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">FS</div><div><div class="anm">Foram_S</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="98"></div></div><span class="pct cg">98%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">3</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">JW</div><div><div class="anm">Jhanvi_Wa</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="97"></div></div><span class="pct cg">97%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">4</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">VG</div><div><div class="anm">Vinod_Ga</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="97"></div></div><span class="pct cg">97%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">5</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">SS</div><div><div class="anm">Sweety_S</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+        </tr>
+<tr data-st="OMNI">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">6</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">DK</div><div><div class="anm">Divya_K</div><div class="ahint">OMNI</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">7</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">AK</div><div><div class="anm">Abdulsalam_K</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">8</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">VS</div><div><div class="anm">Vinesh_S</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">9</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">AS</div><div><div class="anm">Alfiya_S</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">10</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">JB</div><div><div class="anm">Joginder_B</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr>
+<tr data-st="OMNI">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">11</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">AS</div><div><div class="anm">Aslam_S</div><div class="ahint">OMNI</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="94"></div></div><span class="pct cgg">94%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">12</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">MB</div><div><div class="anm">Mehul_B</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="94"></div></div><span class="pct cgg">94%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">13</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">RC</div><div><div class="anm">Radha_C</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="93"></div></div><span class="pct cgg">93%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">14</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">SA</div><div><div class="anm">Saalim_An</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>8</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="93"></div></div><span class="pct cgg">93%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">15</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">RP</div><div><div class="anm">Rahulyadav_P</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="93"></div></div><span class="pct cgg">93%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">16</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">MG</div><div><div class="anm">Mrunal_G</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="93"></div></div><span class="pct cgg">93%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">17</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">MS</div><div><div class="anm">Mubin_S</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="93"></div></div><span class="pct cgg">93%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">18</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">PB</div><div><div class="anm">Prasad_B</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="92"></div></div><span class="pct cgg">92%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">19</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">RK</div><div><div class="anm">Roshni_K</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>8</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="92"></div></div><span class="pct cgg">92%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">20</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">KK</div><div><div class="anm">Kalpita_K</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">21</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">YR</div><div><div class="anm">Yogesh_R</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">22</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">DG</div><div><div class="anm">Deepali_G</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">23</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">KS</div><div><div class="anm">Khushi_Sa</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">24</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">RL</div><div><div class="anm">Reena_L</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="OMNI">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">25</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">PV</div><div><div class="anm">Parvathi_V</div><div class="ahint">OMNI</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="OMNI">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">26</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">PJ</div><div><div class="anm">Pavithra_J</div><div class="ahint">OMNI</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">27</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">NC</div><div><div class="anm">Nishita_C</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">28</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">SS</div><div><div class="anm">Saba_S</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">29</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">VP</div><div><div class="anm">Vatsal_Pa</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">30</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">SP</div><div><div class="anm">Sudhanshu_P</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">31</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">JS</div><div><div class="anm">Jyotsna_S</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="88"></div></div><span class="pct cgg">88%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">32</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">AH</div><div><div class="anm">Abhishek_H</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>10</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="88"></div></div><span class="pct cgg">88%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">33</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">NM</div><div><div class="anm">Nivedita_M</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="87"></div></div><span class="pct cgg">87%</span></div></td>
+        </tr>
+<tr data-st="Presale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">34</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">AS</div><div><div class="anm">Amir_Sh</div><div class="ahint">Presale - Inbound</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="86"></div></div><span class="pct cgg">86%</span></div></td>
+        </tr>
+<tr data-st="Presale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">35</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">DA</div><div><div class="anm">Dorothy_A</div><div class="ahint">Presale - Outbound</div></div></div></td>
+          <td>5</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="86"></div></div><span class="pct cgg">86%</span></div></td>
+        </tr>
+<tr data-st="WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">36</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">AT</div><div><div class="anm">Aditya_T</div><div class="ahint">WhatsApp</div></div></div></td>
+          <td>8</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="85"></div></div><span class="pct cgg">85%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">37</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">KD</div><div><div class="anm">Kavita_Di</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="79"></div></div><span class="pct co">79%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">38</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">KK</div><div><div class="anm">Kavita_K</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">39</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">KY</div><div><div class="anm">Khushboo_Y</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">40</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">PY</div><div><div class="anm">Preeti_Ya</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="70"></div></div><span class="pct co">70%</span></div></td>
+        </tr>
+<tr data-st="Clive">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">41</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">CM</div><div><div class="anm">Chaitali_Ma</div><div class="ahint">Clive</div></div></div></td>
+          <td>6</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="63"></div></div><span class="pct co">63%</span></div></td>
+        </tr></tbody></table></div>
+  </div>
+  <!-- PARAM BREAKDOWN -->
+  <div class="sec">
+    <div class="sec-ey">Error Analysis</div><div class="sec-ttl">Parameter-wise Error Breakdown</div>
+    <div class="sec-sub">Total errors across 302 presales audits this month.</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th style="text-align:left;">Parameter</th><th>Errors</th><th>% of Audits</th><th>Severity</th></tr></thead><tbody><tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#dc2626;margin-right:8px;"></span>Soft Skills</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#dc2626;">183</td><td>61%</td><td><span style="color:#dc2626;font-weight:700;">High</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ea580c;margin-right:8px;"></span>Probing</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#ea580c;">21</td><td>7%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#7c3aed;margin-right:8px;"></span>Follow up</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#7c3aed;">19</td><td>6%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#16a34a;margin-right:8px;"></span>Call closing</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#16a34a;">16</td><td>5%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2563eb;margin-right:8px;"></span>Sales Closure</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">8</td><td>3%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c8a846;margin-right:8px;"></span>Greetings</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">1</td><td>0%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+</tbody></table></div>
+  </div>
+  <!-- CHARTS -->
+  <div class="sec">
+    <div class="sec-ey">Charts</div><div class="sec-ttl">Visual Breakdown</div>
+    <div class="chart-grid">
+      <div class="chart-card"><div class="cc-ttl">CQ by Sub-team</div><div class="cc-sub">Average CQ% per presales sub-team</div><div class="ch"><canvas id="stChart"></canvas></div></div>
+      <div class="chart-card"><div class="cc-ttl">Parameter Error Distribution</div><div class="cc-sub">Which parameters have most errors</div><div class="ch"><canvas id="paramChart"></canvas></div></div>
+      <div class="chart-card full"><div class="cc-ttl">All Agents — CQ Scores</div><div class="cc-sub">Sorted highest to lowest · coloured by sub-team</div><div class="ch" style="height:280px;"><canvas id="agentChart"></canvas></div></div>
+    </div>
+  </div>
+</div>
+<div id="ftr-mount"></div>
+<script>
+Chart.register(ChartDataLabels);
+document.getElementById('hdr-mount').innerHTML = renderHeader('presales.html');
+document.getElementById('ftr-mount').innerHTML = renderFooter();
+const agents = PRESALES_AGENTS;
+const stNames = [...new Set(agents.map(a=>a.subteam))];
+const fDiv = document.getElementById('stFilter');
+[['all','All'],...stNames.map(s=>[s,s])].forEach(([val,lbl])=>{
+  const sp=document.createElement('span');
+  sp.className='pill';sp.textContent=lbl;
+  sp.style.cssText='cursor:pointer;padding:5px 14px;border:1.5px solid var(--bdr);color:var(--txt3);font-weight:700;margin:2px;border-radius:16px;font-size:10px;letter-spacing:.5px;text-transform:uppercase;';
+  sp.onclick=()=>{
+    fDiv.querySelectorAll('span').forEach(p=>{p.style.borderColor='var(--bdr)';p.style.color='var(--txt3)';p.style.background='transparent';});
+    sp.style.borderColor='var(--blue)';sp.style.color='var(--blue)';sp.style.background='var(--blue-pale)';
+    document.querySelectorAll('#agentBody tr').forEach(r=>{r.style.display=(val==='all'||r.getAttribute('data-st')===val)?'':'none';});
+  };
+  if(val==='all'){sp.style.borderColor='var(--blue)';sp.style.color='var(--blue)';sp.style.background='var(--blue-pale)';}
+  fDiv.appendChild(sp);
+});
+const isDark=()=>document.documentElement.getAttribute('data-theme')==='dark';
+const tc=()=>isDark()?'#b8b0cc':'#4a3f2f';
+const gc=()=>isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
+const stSorted=[["Presale - Inbound", {"cq": 93, "audits": 86, "ncf": 0}], ["WhatsApp", {"cq": 92, "audits": 106, "ncf": 0}], ["OMNI", {"cq": 92, "audits": 20, "ncf": 0}], ["Presale - Outbound", {"cq": 90, "audits": 30, "ncf": 0}], ["Clive", {"cq": 83, "audits": 60, "ncf": 5}]];
+new Chart(document.getElementById('stChart'),{type:'bar',data:{labels:stSorted.map(s=>s[0]),datasets:[{label:'CQ%',data:stSorted.map(s=>s[1].cq),backgroundColor:stSorted.map(s=>getAVColor(s[0])+'CC'),borderColor:stSorted.map(s=>getAVColor(s[0])),borderWidth:1.5,borderRadius:4,datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v+'%'}}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},scales:{x:{ticks:{color:tc,font:{size:9}},grid:{display:false}},y:{min:60,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},plugins:[ChartDataLabels]});
+const pData=[["Soft Skills", 183], ["Probing", 21], ["Follow up", 19], ["Call closing", 16], ["Sales Closure", 8], ["Greetings", 1]];
+const pColors={"Soft Skills": "#dc2626", "Probing": "#ea580c", "Follow up": "#7c3aed", "Sales Closure": "#2563eb", "Call closing": "#16a34a", "Greetings": "#c8a846"};
+new Chart(document.getElementById('paramChart'),{type:'doughnut',data:{labels:pData.map(p=>p[0]),datasets:[{data:pData.map(p=>p[1]),backgroundColor:pData.map(p=>(pColors[p[0]]||'#8a7a60')+'CC'),borderColor:pData.map(p=>pColors[p[0]]||'#8a7a60'),borderWidth:2,datalabels:{color:'#fff',font:{weight:'700',size:10},formatter:(v,ctx)=>{const t=ctx.dataset.data.reduce((s,x)=>s+x,0);return v>10?v+' ('+Math.round(v/t*100)+'%)':'';}}}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:tc,font:{size:10},boxWidth:10}},datalabels:{}}},plugins:[ChartDataLabels]});
+new Chart(document.getElementById('agentChart'),{type:'bar',data:{labels:agents.map(a=>a.name.replace('_',' ')),datasets:[{label:'CQ%',data:agents.map(a=>a.cq),backgroundColor:agents.map(a=>getAVColor(a.subteam)+'CC'),borderColor:agents.map(a=>getAVColor(a.subteam)),borderWidth:1,borderRadius:3,datalabels:{display:false}}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{display:false}},scales:{x:{ticks:{color:tc,font:{size:8},maxRotation:45},grid:{display:false}},y:{min:55,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},plugins:[ChartDataLabels]});
+</script>
+</body></html>
