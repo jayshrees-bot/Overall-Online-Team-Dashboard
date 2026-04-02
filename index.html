@@ -32,12 +32,12 @@
     <div class="ig2" id="teamCompare"></div>
   </div>
 
-  <!-- TOP & BOTTOM -->
+  <!-- TOP PERFORMERS BY AUDIT COUNT -->
   <div class="sec">
-    <div class="sec-ey">Performance Highlights</div>
-    <div class="sec-ttl">Top Performers &amp; Focus Areas</div>
-    <div class="sec-sub">Highest and lowest CQ scores across both teams this month.</div>
-    <div class="ig2" id="perfHighlights"></div>
+    <div class="sec-ey">Top Performers</div>
+    <div class="sec-ttl">Highest Audit Count with CQ Maintained</div>
+    <div class="sec-sub">Agents ranked by highest number of audits completed with CQ score sustained — separated by team.</div>
+    <div id="topPerformersMount"></div>
   </div>
 
   <!-- SUB-TEAM SNAPSHOT -->
@@ -111,22 +111,35 @@ document.getElementById('teamCompare').innerHTML = `
     <br><br><a href="postsales.html" style="color:var(--gold);font-weight:700;font-size:12px;">View Full Postsales Report →</a></div>
   </div>`;
 
-// Perf highlights
-const top5 = allAgents.slice(0,5);
-const bot5 = [...allAgents].reverse().slice(0,5);
-document.getElementById('perfHighlights').innerHTML = `
-  <div class="ic green">
-    <div class="ic-lbl">🏆 Top 5 Performers</div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-      ${top5.map(a=>`<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--txt)">${a.name}</span><span style="font-size:10px;color:var(--txt3);margin:0 6px;">${a.subteam}</span><span style="font-weight:700;color:#c8a846;">${a.cq}%</span></div>`).join('')}
+// Top performers by audit count
+const psTop  = [...PRESALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
+const posTop = [...POSTSALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
+const AVC = ['#c8a846','#16a34a','#2563eb','#7c3aed','#ea580c','#dc2626','#0891b2','#be185d','#6d28d9','#0e7490'];
+function topTableHTML(agents, team, color) {
+  const icon = team==='Presales'?'📋':'📞';
+  const rows = agents.map((a,i)=>{
+    const bar=a.cq>=95?'bg':a.cq>=80?'bgg':'bo', pct=a.cq>=95?'cg':a.cq>=80?'cgg':'co';
+    const av=AVC[i%AVC.length], ini=a.name.split('_').filter(Boolean).map(p=>p[0].toUpperCase()).join('').slice(0,2);
+    const ncf=a.ncf>0?`<span class="ncf-bad">${a.ncf}</span>`:'<span class="ncf-ok">0</span>';
+    return `<tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">${i+1}</td>
+      <td><div class="agent-cell"><div class="av" style="background:${av};">${ini}</div><div><div class="anm">${a.name}</div><div class="ahint">${a.subteam}</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">${a.audits}</td><td>${ncf}</td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${a.cq}"></div></div><span class="pct ${pct}">${a.cq}%</span></div></td>
+    </tr>`;
+  }).join('');
+  return `<div class="tbl-wrap" style="margin-bottom:24px;">
+    <div style="background:${color}18;border:1.5px solid ${color}44;border-radius:14px 14px 0 0;padding:14px 18px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${color};margin-bottom:4px;">${icon} ${team.toUpperCase()} — TOP PERFORMERS</div>
+      <div style="font-size:12px;color:var(--txt3);">Ranked by highest audit count · CQ score maintained · March 2026</div>
     </div>
-  </div>
-  <div class="ic red">
-    <div class="ic-lbl">⚠️ Needs Improvement</div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-      ${bot5.map(a=>`<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--txt)">${a.name}</span><span style="font-size:10px;color:var(--txt3);margin:0 6px;">${a.subteam}</span><span style="font-weight:700;color:#dc2626;">${a.cq}% ${a.ncf>0?'⚠ NCF':''}</span></div>`).join('')}
-    </div>
+    <table class="tbl" style="border-radius:0 0 14px 14px;">
+      <thead><tr><th style="width:36px;">#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
   </div>`;
+}
+document.getElementById('topPerformersMount').innerHTML = topTableHTML(psTop,'Presales','#2563eb') + topTableHTML(posTop,'Postsales','#c8a846');
 
 // Sub-team table
 const allSubteams = [
