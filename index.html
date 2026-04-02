@@ -53,6 +53,28 @@
     </div>
   </div>
 
+  <!-- JC WISE CQ SCORES -->
+  <div class="sec">
+    <div class="sec-ey">Agent Performance</div>
+    <div class="sec-ttl">JC Wise CQ Scores</div>
+    <div class="sec-sub">All active agents sorted highest to lowest. Filter by team or sub-team.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="jcFilter"></div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th style="width:40px;">#</th>
+          <th style="text-align:left;">Agent</th>
+          <th>Team</th>
+          <th>Sub-team</th>
+          <th>Audits</th>
+          <th>NCF</th>
+          <th>CQ Score</th>
+        </tr></thead>
+        <tbody id="jcTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- CHARTS -->
   <div class="sec">
     <div class="sec-ey">Visual Analysis</div>
@@ -159,6 +181,57 @@ document.getElementById('quickLinks').innerHTML = [
     <div class="ic-sub">${l.sub}</div>
   </div></a>`).join('');
 
+// ── JC WISE TABLE ──
+const sortedAll = [...PRESALES_AGENTS.map(a=>({...a,team:'Presales'})), ...POSTSALES_AGENTS.map(a=>({...a,team:'Postsales'}))].sort((a,b)=>b.cq-a.cq);
+
+function renderJCTable(filter) {
+  const filtered = filter === 'all' ? sortedAll : sortedAll.filter(a =>
+    filter === 'Presales' || filter === 'Postsales' ? a.team === filter : a.subteam === filter
+  );
+  const AV_COLORS = ['#c8a846','#16a34a','#2563eb','#7c3aed','#ea580c','#dc2626','#0891b2','#be185d'];
+  document.getElementById('jcTableBody').innerHTML = filtered.map((a, i) => {
+    const rank = sortedAll.indexOf(a) + 1;
+    const bar  = a.cq >= 95 ? 'bg' : a.cq >= 80 ? 'bgg' : 'bo';
+    const pct  = a.cq >= 95 ? 'cg' : a.cq >= 80 ? 'cgg' : 'co';
+    const init = a.name.split('_').filter(Boolean).map(p=>p[0].toUpperCase()).join('').slice(0,2);
+    const avc  = AV_COLORS[rank % AV_COLORS.length];
+    const tc   = a.team === 'Presales' ? '#2563eb' : '#c8a846';
+    const ncf  = a.ncf > 0 ? `<span class="ncf-bad">${a.ncf}</span>` : '<span class="ncf-ok">0</span>';
+    const rankIcon = rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':rank;
+    return `<tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;">${rankIcon}</td>
+      <td><div class="agent-cell"><div class="av" style="background:${avc};">${init}</div><div><div class="anm">${a.name}</div></div></div></td>
+      <td><span class="pill" style="background:${tc}22;color:${tc};border:1px solid ${tc}44;font-size:10px;padding:2px 8px;">${a.team}</span></td>
+      <td style="font-size:12px;color:var(--txt3);">${a.subteam}</td>
+      <td>${a.audits}</td>
+      <td>${ncf}</td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${a.cq}"></div></div><span class="pct ${pct}">${a.cq}%</span></div></td>
+    </tr>`;
+  }).join('');
+  animateBars();
+}
+
+// Build filter pills
+const filterDiv = document.getElementById('jcFilter');
+const subteamNames = [...new Set(sortedAll.map(a=>a.subteam))].sort();
+const filters = [['all','All Agents'],['Presales','Presales'],['Postsales','Postsales'],...subteamNames.map(s=>[s,s])];
+filters.forEach(([val,lbl]) => {
+  const sp = document.createElement('span');
+  sp.className = 'pill';
+  sp.textContent = lbl;
+  const isTeam = ['all','Presales','Postsales'].includes(val);
+  sp.style.cssText = `cursor:pointer;padding:5px 14px;border:1.5px solid var(--bdr);color:var(--txt3);font-weight:700;margin:2px;border-radius:16px;font-size:10px;letter-spacing:.5px;text-transform:uppercase;`;
+  sp.onclick = () => {
+    filterDiv.querySelectorAll('span').forEach(p => { p.style.borderColor='var(--bdr)'; p.style.color='var(--txt3)'; p.style.background='transparent'; });
+    const ac = val==='Presales'?'#2563eb':val==='Postsales'?'#c8a846':'var(--gold)';
+    sp.style.borderColor = ac; sp.style.color = ac; sp.style.background = val==='Presales'?'var(--blue-pale)':val==='Postsales'?'var(--gold-pale)':'var(--gold-pale)';
+    renderJCTable(val);
+  };
+  if (val === 'all') { sp.style.borderColor='var(--gold)'; sp.style.color='var(--gold)'; sp.style.background='var(--gold-pale)'; }
+  filterDiv.appendChild(sp);
+});
+renderJCTable('all');
+
 // Charts
 const isDark = ()=>document.documentElement.getAttribute('data-theme')==='dark';
 const tc = ()=>isDark()?'#b8b0cc':'#4a3f2f';
@@ -193,8 +266,7 @@ new Chart(document.getElementById('ncfChart'),{
   plugins:[ChartDataLabels]
 });
 
-// All agents
-const sortedAll = [...PRESALES_AGENTS,...POSTSALES_AGENTS].sort((a,b)=>b.cq-a.cq);
+// All agents — sortedAll already defined above
 new Chart(document.getElementById('allAgentsChart'),{
   type:'bar',
   data:{labels:sortedAll.map(a=>a.name.replace('_',' ')),
