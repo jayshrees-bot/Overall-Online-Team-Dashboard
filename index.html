@@ -57,7 +57,7 @@
   <div class="sec">
     <div class="sec-ey">Agent Performance</div>
     <div class="sec-ttl">JC Wise CQ Scores</div>
-    <div class="sec-sub">All active agents sorted by highest number of audits. Filter by team or sub-team.</div>
+    <div class="sec-sub">All active agents sorted highest to lowest CQ score. Filter by team or sub-team.</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="jcFilter"></div>
     <div class="tbl-wrap">
       <table class="tbl">
@@ -182,7 +182,7 @@ document.getElementById('quickLinks').innerHTML = [
   </div></a>`).join('');
 
 // ── JC WISE TABLE ──
-const sortedAll = [...PRESALES_AGENTS.map(a=>({...a,team:'Presales'})), ...POSTSALES_AGENTS.map(a=>({...a,team:'Postsales'}))].sort((a,b)=>b.audits-a.audits || b.cq-a.cq);
+const sortedAll = [...PRESALES_AGENTS.map(a=>({...a,team:'Presales'})), ...POSTSALES_AGENTS.map(a=>({...a,team:'Postsales'}))].sort((a,b)=>b.cq-a.cq);
 
 function renderJCTable(filter) {
   const filtered = filter === 'all' ? sortedAll : sortedAll.filter(a =>
