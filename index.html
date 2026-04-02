@@ -1,285 +1,399 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CQ Dashboard · Online Team · March 2026</title>
-<link rel="stylesheet" href="theme.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-<script src="data.js"></script><script src="utils.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CQ Dashboard &middot; Online Team &middot; March 2026</title>
+<style>body{margin:0;padding:0;background-color:#f0ede8;}table{border-collapse:collapse;}img{border:0;display:block;}a{text-decoration:none;}</style>
 </head>
-<body>
-<div id="hdr-mount"></div>
+<body style="margin:0;padding:0;background-color:#f0ede8;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0ede8;">
+<tr><td align="center" style="padding:32px 16px 48px;">
+<table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width:640px;background-color:#ffffff;box-shadow:0 8px 40px rgba(0,0,0,0.12);">
 
-<div class="page-hero">
-  <div class="hero-glow"></div><div class="hero-glow2"></div>
-  <div class="hero-inner">
-    <div class="hero-ey">Quality Assurance · Online Team</div>
-    <div class="hero-ttl">CQ <em>Dashboard</em></div>
-    <div class="hero-date">March 2026</div>
-    <div class="hero-sub" id="hero-sub">Loading...</div>
-    <div class="hero-stats" id="hero-stats"></div>
-  </div>
-</div>
+  <!-- TOP BAR -->
+  <tr><td style="background-color:#0a0a18;padding:12px 32px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#ffffff;">CARATLANE <span style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);font-weight:normal;"> A TATA PRODUCT</span></td>
+      <td align="right" style="font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:0.5px;">Quality Assurance &nbsp;&middot;&nbsp; Online Team</td>
+    </tr></table>
+  </td></tr>
 
-<div class="main">
-
-  <!-- TEAM COMPARISON -->
-  <div class="sec">
-    <div class="sec-ey">Team Overview</div>
-    <div class="sec-ttl">Presales vs Postsales</div>
-    <div class="sec-sub">Side-by-side performance comparison for March 2026.</div>
-    <div class="ig2" id="teamCompare"></div>
-  </div>
-
-  <!-- TOP & BOTTOM -->
-  <div class="sec">
-    <div class="sec-ey">Performance Highlights</div>
-    <div class="sec-ttl">Top Performers &amp; Focus Areas</div>
-    <div class="sec-sub">Highest and lowest CQ scores across both teams this month.</div>
-    <div class="ig2" id="perfHighlights"></div>
-  </div>
-
-  <!-- SUB-TEAM SNAPSHOT -->
-  <div class="sec">
-    <div class="sec-ey">Sub-team Snapshot</div>
-    <div class="sec-ttl">CQ by Sub-team</div>
-    <div class="sec-sub">Average CQ across all sub-teams — sorted highest to lowest.</div>
-    <div class="tbl-wrap">
-      <table class="tbl" id="subteamTable">
-        <thead><tr><th style="text-align:left;">Sub-team</th><th>Team</th><th>Agents</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
-        <tbody id="subteamBody"></tbody>
+  <!-- HERO -->
+  <tr><td align="center" style="background-color:#0f1c2a;padding:0;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="3" style="background-color:#c8a846;font-size:0;">&nbsp;</td></tr></table>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:40px 36px 32px;background-color:#0f1c2a;">
+      <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:3.5px;text-transform:uppercase;color:#c8a846;margin:0 0 14px 0;">&mdash;&nbsp; QUALITY ASSURANCE &nbsp;&middot;&nbsp; ONLINE TEAM &nbsp;&mdash;</p>
+      <p style="font-family:Georgia,'Times New Roman',serif;font-size:48px;font-weight:bold;color:#a855f7;margin:0 0 4px 0;line-height:1;letter-spacing:-2px;">CQ <em style="font-style:italic;">Dashboard</em></p>
+      <p style="font-family:Georgia,serif;font-size:20px;color:rgba(255,255,255,0.45);margin:0 0 6px 0;">March 2026 &nbsp;&middot;&nbsp; Online Team</p>
+      <p style="font-family:Arial,sans-serif;font-size:11px;color:rgba(255,255,255,0.3);margin:0 0 28px 0;letter-spacing:0.5px;">863 audits &nbsp;&middot;&nbsp; 73 active agents &nbsp;&middot;&nbsp; Presales &amp; Postsales</p>
+      <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;border:1.5px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;">
+        <tr>
+          <td align="center" style="padding:14px 18px;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#ffffff;margin:0 0 3px 0;line-height:1;">863</p>
+            <p style="font-family:Arial,sans-serif;font-size:8px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0;">AUDITS</p>
+          </td>
+          <td align="center" style="padding:14px 18px;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#c8a846;margin:0 0 3px 0;line-height:1;">87%</p>
+            <p style="font-family:Arial,sans-serif;font-size:8px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0;">OVERALL CQ</p>
+          </td>
+          <td align="center" style="padding:14px 18px;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#60a5fa;margin:0 0 3px 0;line-height:1;">90%</p>
+            <p style="font-family:Arial,sans-serif;font-size:8px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0;">PRESALES CQ</p>
+          </td>
+          <td align="center" style="padding:14px 18px;border-right:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#e8c86a;margin:0 0 3px 0;line-height:1;">86%</p>
+            <p style="font-family:Arial,sans-serif;font-size:8px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0;">POSTSALES CQ</p>
+          </td>
+          <td align="center" style="padding:14px 18px;">
+            <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#f87171;margin:0 0 3px 0;line-height:1;">23</p>
+            <p style="font-family:Arial,sans-serif;font-size:8px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0;">NCF</p>
+          </td>
+        </tr>
       </table>
-    </div>
-  </div>
+    </td></tr></table>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="3" style="background-color:#c8a846;font-size:0;">&nbsp;</td></tr></table>
+  </td></tr>
 
-  <!-- JC WISE CQ SCORES -->
-  <div class="sec">
-    <div class="sec-ey">Agent Performance</div>
-    <div class="sec-ttl">JC Wise CQ Scores</div>
-    <div class="sec-sub">All active agents sorted by highest number of audits. Filter by team or sub-team.</div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="jcFilter"></div>
-    <div class="tbl-wrap">
-      <table class="tbl">
-        <thead><tr>
-          <th style="width:40px;">#</th>
-          <th style="text-align:left;">Agent</th>
-          <th>Team</th>
-          <th>Sub-team</th>
-          <th>Audits</th>
-          <th>NCF</th>
-          <th>CQ Score</th>
-        </tr></thead>
-        <tbody id="jcTableBody"></tbody>
-      </table>
-    </div>
-  </div>
+  <!-- INTRO -->
+  <tr><td align="center" style="padding:26px 36px 22px;background-color:#ffffff;border-bottom:1px solid #f0ede8;">
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:#4a3f2f;line-height:1.75;margin:0 0 10px 0;text-align:center;">Dear Team,</p>
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:#4a3f2f;line-height:1.75;margin:0 0 10px 0;text-align:center;">
+      Here is the CQ summary for the <strong>Online Team &mdash; March 2026</strong>. With <strong>863 audits</strong> across <strong>73 agents</strong> from Presales (90% CQ) and Postsales (86% CQ), the team continues to show steady effort. Click on the interactive dashboard to explore detailed scores, sub-team breakdowns, and individual reports.
+    </p>
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:#4a3f2f;line-height:1.75;margin:0;text-align:center;">Click on your name to view your personal report &#128071;</p>
+  </td></tr>
 
-  <!-- CHARTS -->
-  <div class="sec">
-    <div class="sec-ey">Visual Analysis</div>
-    <div class="sec-ttl">Charts</div>
-    <div class="chart-grid">
-      <div class="chart-card"><div class="cc-ttl">CQ by Sub-team</div><div class="cc-sub">Average CQ% across each sub-team</div><div class="ch"><canvas id="subteamChart"></canvas></div></div>
-      <div class="chart-card"><div class="cc-ttl">Presales vs Postsales NCF</div><div class="cc-sub">NCF count comparison between teams</div><div class="ch"><canvas id="ncfChart"></canvas></div></div>
-      <div class="chart-card full"><div class="cc-ttl">All Agents — CQ Scores</div><div class="cc-sub">Blue = Presales · Gold = Postsales · Sorted highest to lowest</div><div class="ch" style="height:300px;"><canvas id="allAgentsChart"></canvas></div></div>
-    </div>
-  </div>
+  <!-- STAR -->
+  <tr><td style="padding:20px 32px 10px;background-color:#ffffff;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0f1c2a;border:2px solid #c8a846;border-radius:14px;overflow:hidden;">
+      <tr>
+        <td width="5" style="background-color:#c8a846;font-size:0;">&nbsp;</td>
+        <td style="padding:16px 18px;">
+          <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#c8a846;margin:0 0 6px 0;">&#11088; STAR OF THE MONTH &mdash; MARCH 2026</p>
+          <p style="font-family:Arial,sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin:0;line-height:1.6;">
+            <strong style="color:#ffffff;font-size:15px;">Shirsha_S</strong> leads the Online Team with <strong style="color:#c8a846;">98% CQ</strong> &mdash; Clive &middot; 6 audits &middot; 0 NCF. Exceptional performance all through March! &#128079;&#128079;
+          </p>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
 
-  <!-- QUICK LINKS -->
-  <div class="sec">
-    <div class="sec-ey">Navigate</div>
-    <div class="sec-ttl">Deep Dive Reports</div>
-    <div class="ig4" id="quickLinks"></div>
-  </div>
+  <!-- TEAM SUMMARY -->
+  <tr><td style="padding:10px 32px 20px;background-color:#ffffff;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td style="padding:0 6px 0 0;" width="50%">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eff6ff;border:1.5px solid #bfdbfe;border-radius:12px;overflow:hidden;">
+            <tr><td width="4" style="background-color:#2563eb;font-size:0;">&nbsp;</td>
+            <td style="padding:12px 14px;">
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#2563eb;margin:0 0 5px 0;">PRESALES TEAM</p>
+              <p style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#2563eb;margin:0 0 3px 0;line-height:1;">90%</p>
+              <p style="font-family:Arial,sans-serif;font-size:11px;color:#1e40af;margin:0;">302 audits &middot; 41 agents &middot; 5 NCF</p>
+            </td></tr>
+          </table>
+        </td>
+        <td style="padding:0 0 0 6px;" width="50%">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fffbe6;border:1.5px solid #fde68a;border-radius:12px;overflow:hidden;">
+            <tr><td width="4" style="background-color:#c8a846;font-size:0;">&nbsp;</td>
+            <td style="padding:12px 14px;">
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#92700a;margin:0 0 5px 0;">POSTSALES TEAM</p>
+              <p style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#92700a;margin:0 0 3px 0;line-height:1;">86%</p>
+              <p style="font-family:Arial,sans-serif;font-size:11px;color:#78350f;margin:0;">561 audits &middot; 32 agents &middot; 18 NCF</p>
+            </td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
 
-</div>
-<div id="ftr-mount"></div>
+  <!-- DIVIDER -->
+  <tr><td align="center" style="padding:4px 32px 16px;background-color:#ffffff;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="border-top:1px solid #e8e4de;font-size:0;">&nbsp;</td>
+      <td width="auto" align="center" style="padding:0 12px;white-space:nowrap;"><p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#b8a888;margin:0;">TOP 8 PERFORMERS &mdash; CLICK TO VIEW FULL REPORT</p></td>
+      <td style="border-top:1px solid #e8e4de;font-size:0;">&nbsp;</td>
+    </tr></table>
+  </td></tr>
 
-<script>
-Chart.register(ChartDataLabels);
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fffef5;border:1.5px solid #c8a846;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#c8a846;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#0f1c2a;">1</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#c8a846;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">SS</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Shirsha_S <span style="font-size:10px;color:#c8a846;font-weight:normal;">⭐ Star of the Month</span></p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Clive &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 6 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Leads the entire Online Team ✨</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">98%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="76" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">2</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#16a34a;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">FS</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Foram_S</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Presale - Inbound &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 10 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">98%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="76" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">3</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#2563eb;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">MR</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Mallika_R</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Experience &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 5 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">98%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="76" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">4</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#7c3aed;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">JW</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Jhanvi_Wa</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Clive &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 6 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">97%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="75" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">5</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#ea580c;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">VG</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Vinod_Ga</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">WhatsApp &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 10 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">97%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="75" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">6</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#dc2626;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">SS</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Sweety_S</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Presale - Inbound &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 10 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">96%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="73" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 10px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">7</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#0891b2;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">TJ</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Tisha_J</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Experience &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 5 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">96%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="73" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 32px 22px;background-color:#ffffff;">
+      <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="text-decoration:none;display:block;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#faf9f6;border:1px solid #e5e0d8;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td width="34" align="center" style="background-color:#e5e0d8;padding:0 8px;font-family:Georgia,serif;font-size:16px;font-weight:bold;color:#8a7a60;">8</td>
+            <td width="50" style="padding:12px 0 12px 12px;" valign="middle">
+              <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="38" height="38" style="background-color:#be185d;border-radius:50%;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#ffffff;text-align:center;">AM</td></tr></table>
+            </td>
+            <td style="padding:12px 10px;" valign="middle">
+              <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1a1208;margin:0 0 2px 0;">Akbar_M</p>
+              <p style="font-family:Arial,sans-serif;font-size:10px;color:#8a7a60;margin:0;">Post Sale - Outbound &nbsp;&middot;&nbsp; <span style="color:#c8a846;font-weight:700;"></span> &nbsp;&middot;&nbsp; 25 audits &nbsp;&middot;&nbsp; <span style="color:#16a34a;">0 NCF</span> &nbsp;&middot;&nbsp; Outstanding performance 🌟</p>
+            </td>
+            <td align="right" style="padding:12px 16px 12px 6px;" valign="middle">
+              <p style="font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#16a34a;margin:0 0 4px 0;line-height:1;text-align:right;">96%</p>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-left:auto;"><tr>
+                <td width="80" height="5" style="background-color:#e8e4de;border-radius:3px;">
+                  <table cellpadding="0" cellspacing="0" border="0"><tr><td width="73" height="5" style="background-color:#3a9e50;border-radius:3px;font-size:0;">&nbsp;</td></tr></table>
+                </td>
+              </tr></table>
+              <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:0.8px;text-transform:uppercase;color:#c8a846;margin:4px 0 0 0;text-align:right;">View Report &rarr;</p>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
 
-document.getElementById('hdr-mount').innerHTML = renderHeader('index.html');
-document.getElementById('ftr-mount').innerHTML = renderFooter();
+  <!-- QUICK FINDINGS -->
+  <tr><td style="padding:0 32px 20px;background-color:#ffffff;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f7f6f2;border-radius:14px;">
+      <tr><td style="padding:16px 20px;">
+        <p style="font-family:Arial,sans-serif;font-size:9px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#8a7a60;margin:0 0 12px 0;">&#128269; KEY FINDINGS THIS MONTH</p>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr><td style="padding:6px 0;vertical-align:top;width:16px;font-size:14px;">&#128308;</td><td style="padding:6px 0 6px 8px;font-family:Arial,sans-serif;font-size:12px;color:#4a3f2f;line-height:1.6;"><strong>Presales:</strong> Personalisation gap (183 errors) is the #1 issue — no cx name usage, no reference to history, no buying intent probing.</td></tr>
+          <tr><td style="padding:6px 0;vertical-align:top;font-size:14px;">&#128308;</td><td style="padding:6px 0 6px 8px;font-family:Arial,sans-serif;font-size:12px;color:#4a3f2f;line-height:1.6;"><strong>Postsales:</strong> Empathy missing (197+ errors) — JCs are sharing process info without acknowledging cx frustration first.</td></tr>
+          <tr><td style="padding:6px 0;vertical-align:top;font-size:14px;">&#128993;</td><td style="padding:6px 0 6px 8px;font-family:Arial,sans-serif;font-size:12px;color:#4a3f2f;line-height:1.6;"><strong>Postsales:</strong> Ownership not taken (30 errors) — cx ends calls without a confirmed resolution or next step.</td></tr>
+          <tr><td style="padding:6px 0;vertical-align:top;font-size:14px;">&#128992;</td><td style="padding:6px 0 6px 8px;font-family:Arial,sans-serif;font-size:12px;color:#4a3f2f;line-height:1.6;"><strong>Presales:</strong> Follow-up not done (19 errors) — promised callbacks and price updates not delivered within committed TAT.</td></tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
 
-const allAgents = [...PRESALES_AGENTS, ...POSTSALES_AGENTS].sort((a,b)=>b.cq-a.cq);
-const totalAudits = PS_TOTALS.audits + POS_TOTALS.audits;
-const totalNCF    = PS_TOTALS.ncf + POS_TOTALS.ncf;
-const overallCQ   = Math.round((PS_TOTALS.cq * PS_TOTALS.audits + POS_TOTALS.cq * POS_TOTALS.audits) / totalAudits);
+  <!-- QUOTE -->
+  <tr><td style="padding:0 32px 20px;background-color:#ffffff;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f7f6f2;border-left:4px solid #a855f7;border-radius:0 12px 12px 0;">
+      <tr><td style="padding:14px 18px;">
+        <p style="font-family:Georgia,serif;font-size:14px;font-style:italic;color:#4a3f2f;margin:0 0 5px 0;line-height:1.65;">&ldquo;Every customer interaction is an opportunity to turn a detractor into a promoter. Own it.&rdquo;</p>
+        <p style="font-family:Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#a855f7;margin:0;">&mdash; CaratLane CQ Team</p>
+      </td></tr>
+    </table>
+  </td></tr>
 
-document.getElementById('hero-sub').textContent = `${totalAudits} audits · ${allAgents.length} active agents · Presales & Postsales`;
-document.getElementById('hero-stats').innerHTML = `
-  <div class="hs"><div class="hs-val white" data-cu="${totalAudits}">${totalAudits}</div><div class="hs-lbl">Total Audits</div></div>
-  <div class="hs"><div class="hs-val gold" data-cu="${overallCQ}" data-suf="%">${overallCQ}%</div><div class="hs-lbl">Overall CQ</div></div>
-  <div class="hs"><div class="hs-val blue" data-cu="${PS_TOTALS.cq}" data-suf="%">${PS_TOTALS.cq}%</div><div class="hs-lbl">Presales CQ</div></div>
-  <div class="hs"><div class="hs-val purple" data-cu="${POS_TOTALS.cq}" data-suf="%">${POS_TOTALS.cq}%</div><div class="hs-lbl">Postsales CQ</div></div>
-  <div class="hs"><div class="hs-val red" data-cu="${totalNCF}">${totalNCF}</div><div class="hs-lbl">Total NCF</div></div>
-  <div class="hs"><div class="hs-val white" data-cu="${allAgents.length}">${allAgents.length}</div><div class="hs-lbl">Active Agents</div></div>`;
+  <!-- CTA BUTTONS -->
+  <tr><td align="center" style="padding:22px 36px 32px;background-color:#ffffff;border-top:1px solid #f0ede8;">
+    <p style="font-family:Georgia,serif;font-size:20px;font-weight:bold;color:#1c2a3a;margin:0 0 8px 0;text-align:center;">Explore the Full Interactive Dashboard</p>
+    <p style="font-family:Arial,sans-serif;font-size:12px;color:#8a7a60;line-height:1.7;margin:0 0 20px 0;text-align:center;">5 pages &mdash; Overview, Presales, Postsales, Customer Queries, and Findings &amp; AOIs.<br>All interactive with dark mode, filters, and charts.</p>
+    <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 10px;">
+      <tr><td align="center" style="background-color:#0f1c2a;border:2px solid #c8a846;border-radius:10px;padding:0;">
+        <a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/" target="_blank" style="display:inline-block;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#c8a846;padding:13px 36px;text-decoration:none;">View Full Dashboard &rarr;</a>
+      </td></tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+      <tr>
+        <td style="padding:0 5px;"><a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/presales.html" target="_blank" style="display:inline-block;font-family:Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#2563eb;padding:8px 16px;border:1.5px solid #2563eb44;border-radius:8px;background:#eff6ff;">Presales &#8594;</a></td>
+        <td style="padding:0 5px;"><a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/postsales.html" target="_blank" style="display:inline-block;font-family:Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#92700a;padding:8px 16px;border:1.5px solid #c8a84644;border-radius:8px;background:#fffbe6;">Postsales &#8594;</a></td>
+        <td style="padding:0 5px;"><a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/queries.html" target="_blank" style="display:inline-block;font-family:Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#6d28d9;padding:8px 16px;border:1.5px solid #7c3aed44;border-radius:8px;background:#f5f3ff;">Queries &#8594;</a></td>
+        <td style="padding:0 5px;"><a href="https://jayshrees-bot.github.io/Overall-Online-Team-Dashboard/findings.html" target="_blank" style="display:inline-block;font-family:Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#dc2626;padding:8px 16px;border:1.5px solid #dc262644;border-radius:8px;background:#fef2f2;">Findings &#8594;</a></td>
+      </tr>
+    </table>
+    <p style="font-family:Arial,sans-serif;font-size:10px;color:#b8a888;margin:14px 0 0 0;text-align:center;">&#127758; Opens in browser &nbsp;&middot;&nbsp; No login required &nbsp;&middot;&nbsp; Works on mobile</p>
+  </td></tr>
 
-// Team compare cards
-document.getElementById('teamCompare').innerHTML = `
-  <div class="ic blue" style="text-align:center;">
-    <div class="ic-lbl">📋 Presales Team</div>
-    <div class="ic-val blue">${PS_TOTALS.cq}%</div>
-    <div class="ic-sub"><strong>${PS_TOTALS.audits}</strong> audits · <strong>${PS_TOTALS.agents}</strong> agents · <strong>${PS_TOTALS.ncf}</strong> NCF<br><br>
-    ${PS_TOTALS.zero_ncf} agents with Zero NCF · Sub-teams: Inbound, Outbound, WhatsApp, OMNI, Clive
-    <br><br><a href="presales.html" style="color:var(--blue);font-weight:700;font-size:12px;">View Full Presales Report →</a></div>
-  </div>
-  <div class="ic gold" style="text-align:center;">
-    <div class="ic-lbl">📞 Postsales Team</div>
-    <div class="ic-val gold">${POS_TOTALS.cq}%</div>
-    <div class="ic-sub"><strong>${POS_TOTALS.audits}</strong> audits · <strong>${POS_TOTALS.agents}</strong> agents · <strong>${POS_TOTALS.ncf}</strong> NCF<br><br>
-    ${POS_TOTALS.zero_ncf} agents with Zero NCF · Sub-teams: Inbound, Outbound, WhatsApp, Email, Experience
-    <br><br><a href="postsales.html" style="color:var(--gold);font-weight:700;font-size:12px;">View Full Postsales Report →</a></div>
-  </div>`;
+  <!-- FOOTER -->
+  <tr><td style="background-color:#0a0a18;padding:0;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="2" style="background-color:#c8a846;font-size:0;">&nbsp;</td></tr></table>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:20px 32px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle">
+          <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 2px 0;">CARATLANE</p>
+          <p style="font-family:Arial,sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin:0 0 2px 0;">A TATA PRODUCT</p>
+          <p style="font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.25);margin:0;">Quality Assurance &middot; Online Team</p>
+        </td>
+        <td align="right" valign="middle">
+          <p style="font-family:Arial,sans-serif;font-size:11px;color:rgba(255,255,255,0.28);margin:0;line-height:1.9;text-align:right;">CQ Dashboard &middot; Online Team<br>March 2026 &middot; 863 Audits &middot; 73 Agents<br>Presales &amp; Postsales Combined</p>
+        </td>
+      </tr></table>
+    </td></tr></table>
+  </td></tr>
 
-// Perf highlights
-const top5 = allAgents.slice(0,5);
-const bot5 = [...allAgents].reverse().slice(0,5);
-document.getElementById('perfHighlights').innerHTML = `
-  <div class="ic green">
-    <div class="ic-lbl">🏆 Top 5 Performers</div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-      ${top5.map(a=>`<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--txt)">${a.name}</span><span style="font-size:10px;color:var(--txt3);margin:0 6px;">${a.subteam}</span><span style="font-weight:700;color:#c8a846;">${a.cq}%</span></div>`).join('')}
-    </div>
-  </div>
-  <div class="ic red">
-    <div class="ic-lbl">⚠️ Needs Improvement</div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-      ${bot5.map(a=>`<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;"><span style="font-weight:600;color:var(--txt)">${a.name}</span><span style="font-size:10px;color:var(--txt3);margin:0 6px;">${a.subteam}</span><span style="font-weight:700;color:#dc2626;">${a.cq}% ${a.ncf>0?'⚠ NCF':''}</span></div>`).join('')}
-    </div>
-  </div>`;
-
-// Sub-team table
-const allSubteams = [
-  ...Object.entries(PS_SUBTEAMS).map(([k,v])=>({...v,name:k,team:'Presales'})),
-  ...Object.entries(POS_SUBTEAMS).map(([k,v])=>({...v,name:k,team:'Postsales'}))
-].sort((a,b)=>b.cq-a.cq);
-
-document.getElementById('subteamBody').innerHTML = allSubteams.map(s=>{
-  const {bar,pct} = cqClass(s.cq);
-  const tc = s.team==='Presales'?'#2563eb':'#c8a846';
-  return `<tr>
-    <td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${getAVColor(s.name)};margin-right:8px;"></span>${s.name}</td>
-    <td><span class="pill" style="background:${tc}22;color:${tc};border:1px solid ${tc}44;">${s.team}</span></td>
-    <td>${s.agents}</td><td>${s.audits}</td>
-    <td>${s.ncf>0?`<span class="ncf-bad">${s.ncf}</span>`:'<span class="ncf-ok">0</span>'}</td>
-    <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${s.cq}"></div></div><span class="pct ${pct}">${s.cq}%</span></div></td>
-  </tr>`;
-}).join('');
-
-// Quick links
-document.getElementById('quickLinks').innerHTML = [
-  {href:'presales.html',icon:'📋',title:'Presales Dashboard',sub:'41 agents · scores, errors, sub-teams',color:'var(--blue)'},
-  {href:'postsales.html',icon:'📞',title:'Postsales Dashboard',sub:'32 agents · scores, errors, sub-teams',color:'var(--gold)'},
-  {href:'queries.html',icon:'❓',title:'Customer Queries',sub:'Top queries: Presales vs Postsales',color:'var(--purple)'},
-  {href:'findings.html',icon:'🔍',title:'Findings & AOIs',sub:'Key observations & improvement areas',color:'var(--red)'},
-].map(l=>`<a href="${l.href}" style="text-decoration:none;">
-  <div class="ic" style="--ic-acc:${l.color};text-align:center;cursor:pointer;">
-    <div style="font-size:28px;margin-bottom:10px;">${l.icon}</div>
-    <div style="font-size:14px;font-weight:700;color:var(--txt);margin-bottom:6px;">${l.title}</div>
-    <div class="ic-sub">${l.sub}</div>
-  </div></a>`).join('');
-
-// ── JC WISE TABLE ──
-const sortedAll = [...PRESALES_AGENTS.map(a=>({...a,team:'Presales'})), ...POSTSALES_AGENTS.map(a=>({...a,team:'Postsales'}))].sort((a,b)=>b.audits-a.audits || b.cq-a.cq);
-
-function renderJCTable(filter) {
-  const filtered = filter === 'all' ? sortedAll : sortedAll.filter(a =>
-    filter === 'Presales' || filter === 'Postsales' ? a.team === filter : a.subteam === filter
-  );
-  const AV_COLORS = ['#c8a846','#16a34a','#2563eb','#7c3aed','#ea580c','#dc2626','#0891b2','#be185d'];
-  document.getElementById('jcTableBody').innerHTML = filtered.map((a, i) => {
-    const rank = sortedAll.indexOf(a) + 1;
-    const bar  = a.cq >= 95 ? 'bg' : a.cq >= 80 ? 'bgg' : 'bo';
-    const pct  = a.cq >= 95 ? 'cg' : a.cq >= 80 ? 'cgg' : 'co';
-    const init = a.name.split('_').filter(Boolean).map(p=>p[0].toUpperCase()).join('').slice(0,2);
-    const avc  = AV_COLORS[rank % AV_COLORS.length];
-    const tc   = a.team === 'Presales' ? '#2563eb' : '#c8a846';
-    const ncf  = a.ncf > 0 ? `<span class="ncf-bad">${a.ncf}</span>` : '<span class="ncf-ok">0</span>';
-    const rankIcon = rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':rank;
-    return `<tr>
-      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;">${rankIcon}</td>
-      <td><div class="agent-cell"><div class="av" style="background:${avc};">${init}</div><div><div class="anm">${a.name}</div></div></div></td>
-      <td><span class="pill" style="background:${tc}22;color:${tc};border:1px solid ${tc}44;font-size:10px;padding:2px 8px;">${a.team}</span></td>
-      <td style="font-size:12px;color:var(--txt3);">${a.subteam}</td>
-      <td>${a.audits}</td>
-      <td>${ncf}</td>
-      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${a.cq}"></div></div><span class="pct ${pct}">${a.cq}%</span></div></td>
-    </tr>`;
-  }).join('');
-  animateBars();
-}
-
-// Build filter pills
-const filterDiv = document.getElementById('jcFilter');
-const subteamNames = [...new Set(sortedAll.map(a=>a.subteam))].sort();
-const filters = [['all','All Agents'],['Presales','Presales'],['Postsales','Postsales'],...subteamNames.map(s=>[s,s])];
-filters.forEach(([val,lbl]) => {
-  const sp = document.createElement('span');
-  sp.className = 'pill';
-  sp.textContent = lbl;
-  const isTeam = ['all','Presales','Postsales'].includes(val);
-  sp.style.cssText = `cursor:pointer;padding:5px 14px;border:1.5px solid var(--bdr);color:var(--txt3);font-weight:700;margin:2px;border-radius:16px;font-size:10px;letter-spacing:.5px;text-transform:uppercase;`;
-  sp.onclick = () => {
-    filterDiv.querySelectorAll('span').forEach(p => { p.style.borderColor='var(--bdr)'; p.style.color='var(--txt3)'; p.style.background='transparent'; });
-    const ac = val==='Presales'?'#2563eb':val==='Postsales'?'#c8a846':'var(--gold)';
-    sp.style.borderColor = ac; sp.style.color = ac; sp.style.background = val==='Presales'?'var(--blue-pale)':val==='Postsales'?'var(--gold-pale)':'var(--gold-pale)';
-    renderJCTable(val);
-  };
-  if (val === 'all') { sp.style.borderColor='var(--gold)'; sp.style.color='var(--gold)'; sp.style.background='var(--gold-pale)'; }
-  filterDiv.appendChild(sp);
-});
-renderJCTable('all');
-
-// Charts
-const isDark = ()=>document.documentElement.getAttribute('data-theme')==='dark';
-const tc = ()=>isDark()?'#b8b0cc':'#4a3f2f';
-const gc = ()=>isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
-
-// Sub-team chart
-const stData = allSubteams;
-new Chart(document.getElementById('subteamChart'),{
-  type:'bar',
-  data:{labels:stData.map(s=>s.name),datasets:[{label:'CQ%',data:stData.map(s=>s.cq),
-    backgroundColor:stData.map(s=>s.team==='Presales'?'#2563ebCC':'#c8a846CC'),
-    borderColor:stData.map(s=>s.team==='Presales'?'#2563eb':'#c8a846'),
-    borderWidth:1.5,borderRadius:4,
-    datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v+'%'}
-  }]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},
-    scales:{x:{ticks:{color:tc,font:{size:9}},grid:{display:false}},y:{min:50,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},
-  plugins:[ChartDataLabels]
-});
-
-// NCF chart
-new Chart(document.getElementById('ncfChart'),{
-  type:'bar',
-  data:{labels:['Presales','Postsales'],
-    datasets:[
-      {label:'Audits',data:[PS_TOTALS.audits,POS_TOTALS.audits],backgroundColor:['#2563eb88','#c8a84688'],borderColor:['#2563eb','#c8a846'],borderWidth:2,borderRadius:6,yAxisID:'y',datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:11},formatter:v=>`${v} audits`}},
-      {label:'NCF',data:[PS_TOTALS.ncf,POS_TOTALS.ncf],backgroundColor:['#dc262688','#dc262688'],borderColor:['#dc2626','#dc2626'],borderWidth:2,borderRadius:6,yAxisID:'y1',datalabels:{anchor:'end',align:'end',color:'#dc2626',font:{weight:'700',size:13},formatter:v=>`${v} NCF`}}
-    ]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{position:'top',labels:{color:tc,font:{size:11}}},datalabels:{}},
-    scales:{y:{ticks:{color:tc},grid:{color:gc}},y1:{position:'right',ticks:{color:'#dc2626'},grid:{display:false}}}},
-  plugins:[ChartDataLabels]
-});
-
-// All agents — sortedAll already defined above
-new Chart(document.getElementById('allAgentsChart'),{
-  type:'bar',
-  data:{labels:sortedAll.map(a=>a.name.replace('_',' ')),
-    datasets:[{label:'CQ%',data:sortedAll.map(a=>a.cq),
-      backgroundColor:sortedAll.map(a=>a.team==='Presales'?'#2563ebCC':'#c8a846CC'),
-      borderColor:sortedAll.map(a=>a.team==='Presales'?'#2563eb':'#c8a846'),
-      borderWidth:1,borderRadius:3,datalabels:{display:false}
-    }]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:true,labels:{generateLabels:()=>[{text:'Presales',fillStyle:'#2563ebCC',strokeStyle:'#2563eb',lineWidth:1},{text:'Postsales',fillStyle:'#c8a846CC',strokeStyle:'#c8a846',lineWidth:1}],color:tc,font:{size:11}}},datalabels:{display:false},
-      tooltip:{callbacks:{label:ctx=>`${ctx.raw}% (${sortedAll[ctx.dataIndex].team})`}}},
-    scales:{x:{ticks:{color:tc,font:{size:8},maxRotation:45},grid:{display:false}},y:{min:50,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},
-  plugins:[ChartDataLabels]
-});
-</script>
+</table></td></tr></table>
 </body></html>
