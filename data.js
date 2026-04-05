@@ -1,16 +1,602 @@
 // ── TEAM DATA ──
-const PRESALES_AGENTS = [{"name": "Shirsha_S", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 98, "team": "Presales"}, {"name": "Foram_S", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 98, "team": "Presales"}, {"name": "Jhanvi_Wa", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 97, "team": "Presales"}, {"name": "Vinod_Ga", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 97, "team": "Presales"}, {"name": "Sweety_S", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 96, "team": "Presales"}, {"name": "Divya_K", "subteam": "OMNI", "audits": 5, "ncf": 0, "cq": 95, "team": "Presales"}, {"name": "Abdulsalam_K", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 95, "team": "Presales"}, {"name": "Vinesh_S", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 95, "team": "Presales"}, {"name": "Alfiya_S", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 95, "team": "Presales"}, {"name": "Joginder_B", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 95, "team": "Presales"}, {"name": "Aslam_S", "subteam": "OMNI", "audits": 5, "ncf": 0, "cq": 94, "team": "Presales"}, {"name": "Mehul_B", "subteam": "Presale - Inbound", "audits": 6, "ncf": 0, "cq": 94, "team": "Presales"}, {"name": "Radha_C", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 93, "team": "Presales"}, {"name": "Saalim_An", "subteam": "Presale - Inbound", "audits": 8, "ncf": 0, "cq": 93, "team": "Presales"}, {"name": "Rahulyadav_P", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 93, "team": "Presales"}, {"name": "Mrunal_G", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 93, "team": "Presales"}, {"name": "Mubin_S", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 93, "team": "Presales"}, {"name": "Prasad_B", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 92, "team": "Presales"}, {"name": "Roshni_K", "subteam": "WhatsApp", "audits": 8, "ncf": 0, "cq": 92, "team": "Presales"}, {"name": "Kalpita_K", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 91, "team": "Presales"}, {"name": "Yogesh_R", "subteam": "Presale - Inbound", "audits": 6, "ncf": 0, "cq": 91, "team": "Presales"}, {"name": "Deepali_G", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 91, "team": "Presales"}, {"name": "Khushi_Sa", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 91, "team": "Presales"}, {"name": "Reena_L", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Parvathi_V", "subteam": "OMNI", "audits": 5, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Pavithra_J", "subteam": "OMNI", "audits": 5, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Nishita_C", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Saba_S", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Vatsal_Pa", "subteam": "Presale - Inbound", "audits": 10, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Sudhanshu_P", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 90, "team": "Presales"}, {"name": "Jyotsna_S", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 88, "team": "Presales"}, {"name": "Abhishek_H", "subteam": "WhatsApp", "audits": 10, "ncf": 0, "cq": 88, "team": "Presales"}, {"name": "Nivedita_M", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 87, "team": "Presales"}, {"name": "Amir_Sh", "subteam": "Presale - Inbound", "audits": 6, "ncf": 0, "cq": 86, "team": "Presales"}, {"name": "Dorothy_A", "subteam": "Presale - Outbound", "audits": 5, "ncf": 0, "cq": 86, "team": "Presales"}, {"name": "Aditya_T", "subteam": "WhatsApp", "audits": 8, "ncf": 0, "cq": 85, "team": "Presales"}, {"name": "Kavita_Di", "subteam": "Clive", "audits": 6, "ncf": 0, "cq": 79, "team": "Presales"}, {"name": "Kavita_K", "subteam": "Clive", "audits": 6, "ncf": 1, "cq": 73, "team": "Presales"}, {"name": "Khushboo_Y", "subteam": "Clive", "audits": 6, "ncf": 1, "cq": 73, "team": "Presales"}, {"name": "Preeti_Ya", "subteam": "Clive", "audits": 6, "ncf": 1, "cq": 70, "team": "Presales"}, {"name": "Chaitali_Ma", "subteam": "Clive", "audits": 6, "ncf": 2, "cq": 63, "team": "Presales"}];
-const POSTSALES_AGENTS = [{"name": "Mallika_R", "subteam": "Experience", "audits": 5, "ncf": 0, "cq": 98, "team": "Postsales"}, {"name": "Tisha_J", "subteam": "Experience", "audits": 5, "ncf": 0, "cq": 96, "team": "Postsales"}, {"name": "Akbar_M", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 96, "team": "Postsales"}, {"name": "Shruthiparmar_D", "subteam": "Post Sale - Whatsapp", "audits": 25, "ncf": 0, "cq": 96, "team": "Postsales"}, {"name": "Juwairiya_A", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 0, "cq": 95, "team": "Postsales"}, {"name": "Rayeesa_S", "subteam": "Post Sale - Whatsapp", "audits": 25, "ncf": 0, "cq": 95, "team": "Postsales"}, {"name": "Khushi_J", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 94, "team": "Postsales"}, {"name": "Sadiqbasha_I", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 94, "team": "Postsales"}, {"name": "Sanjana_J", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 93, "team": "Postsales"}, {"name": "Kareemullah_M", "subteam": "Post Sale - Whatsapp", "audits": 25, "ncf": 0, "cq": 93, "team": "Postsales"}, {"name": "Karun_G", "subteam": "Post Sale - Whatsapp", "audits": 25, "ncf": 0, "cq": 91, "team": "Postsales"}, {"name": "Ansari_S", "subteam": "Email", "audits": 7, "ncf": 0, "cq": 90, "team": "Postsales"}, {"name": "Jinal_K", "subteam": "Email", "audits": 7, "ncf": 0, "cq": 90, "team": "Postsales"}, {"name": "Asrarahmed_P", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 0, "cq": 90, "team": "Postsales"}, {"name": "Ghouse_M", "subteam": "Email", "audits": 7, "ncf": 0, "cq": 89, "team": "Postsales"}, {"name": "Kruti_P", "subteam": "Experience", "audits": 5, "ncf": 0, "cq": 89, "team": "Postsales"}, {"name": "Aqsa_A", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 88, "team": "Postsales"}, {"name": "Preethi_V", "subteam": "Email", "audits": 7, "ncf": 0, "cq": 87, "team": "Postsales"}, {"name": "Adeeb_H", "subteam": "Post Sale - Outbound", "audits": 25, "ncf": 0, "cq": 86, "team": "Postsales"}, {"name": "Oindrilla_D", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 1, "cq": 84, "team": "Postsales"}, {"name": "Madhu_D", "subteam": "Post Sale - Whatsapp", "audits": 10, "ncf": 0, "cq": 84, "team": "Postsales"}, {"name": "Theja_B", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 1, "cq": 83, "team": "Postsales"}, {"name": "John_F", "subteam": "Post Sale - Whatsapp", "audits": 25, "ncf": 2, "cq": 80, "team": "Postsales"}, {"name": "Nitheesh_R", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 1, "cq": 79, "team": "Postsales"}, {"name": "Surbhi_A", "subteam": "Email", "audits": 7, "ncf": 0, "cq": 77, "team": "Postsales"}, {"name": "Muzakir_N", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 2, "cq": 75, "team": "Postsales"}, {"name": "Mazia_N", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 2, "cq": 73, "team": "Postsales"}, {"name": "Swastika_Sa", "subteam": "Clive", "audits": 6, "ncf": 1, "cq": 70, "team": "Postsales"}, {"name": "Chanchal_S", "subteam": "Post Sale - Inbound", "audits": 25, "ncf": 3, "cq": 69, "team": "Postsales"}, {"name": "Ajmal_A", "subteam": "Experience", "audits": 5, "ncf": 2, "cq": 60, "team": "Postsales"}, {"name": "Ankita_R", "subteam": "Experience", "audits": 5, "ncf": 1, "cq": 58, "team": "Postsales"}, {"name": "Vyas_N", "subteam": "Post Sale - Whatsapp", "audits": 10, "ncf": 2, "cq": 56, "team": "Postsales"}];
+const PRESALES_AGENTS  = [
+  {
+    "name": "Shirsha_S",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 98,
+    "team": "Presales"
+  },
+  {
+    "name": "Foram_S",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 98,
+    "team": "Presales"
+  },
+  {
+    "name": "Jhanvi_Wa",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 97,
+    "team": "Presales"
+  },
+  {
+    "name": "Vinod_Ga",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 97,
+    "team": "Presales"
+  },
+  {
+    "name": "Sweety_S",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 96,
+    "team": "Presales"
+  },
+  {
+    "name": "Divya_K",
+    "subteam": "OMNI",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Presales"
+  },
+  {
+    "name": "Abdulsalam_K",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Presales"
+  },
+  {
+    "name": "Vinesh_S",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Presales"
+  },
+  {
+    "name": "Alfiya_S",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Presales"
+  },
+  {
+    "name": "Joginder_B",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Presales"
+  },
+  {
+    "name": "Aslam_S",
+    "subteam": "OMNI",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 94,
+    "team": "Presales"
+  },
+  {
+    "name": "Mehul_B",
+    "subteam": "Presale - Inbound",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 94,
+    "team": "Presales"
+  },
+  {
+    "name": "Radha_C",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Presales"
+  },
+  {
+    "name": "Saalim_An",
+    "subteam": "Presale - Inbound",
+    "audits": 8,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Presales"
+  },
+  {
+    "name": "Rahulyadav_P",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Presales"
+  },
+  {
+    "name": "Mrunal_G",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Presales"
+  },
+  {
+    "name": "Mubin_S",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Presales"
+  },
+  {
+    "name": "Prasad_B",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 92,
+    "team": "Presales"
+  },
+  {
+    "name": "Roshni_K",
+    "subteam": "WhatsApp",
+    "audits": 8,
+    "ncf": 0,
+    "cq": 92,
+    "team": "Presales"
+  },
+  {
+    "name": "Kalpita_K",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 91,
+    "team": "Presales"
+  },
+  {
+    "name": "Yogesh_R",
+    "subteam": "Presale - Inbound",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 91,
+    "team": "Presales"
+  },
+  {
+    "name": "Deepali_G",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 91,
+    "team": "Presales"
+  },
+  {
+    "name": "Khushi_Sa",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 91,
+    "team": "Presales"
+  },
+  {
+    "name": "Reena_L",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Parvathi_V",
+    "subteam": "OMNI",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Pavithra_J",
+    "subteam": "OMNI",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Nishita_C",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Saba_S",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Vatsal_Pa",
+    "subteam": "Presale - Inbound",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Sudhanshu_P",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Presales"
+  },
+  {
+    "name": "Jyotsna_S",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 88,
+    "team": "Presales"
+  },
+  {
+    "name": "Abhishek_H",
+    "subteam": "WhatsApp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 88,
+    "team": "Presales"
+  },
+  {
+    "name": "Nivedita_M",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 87,
+    "team": "Presales"
+  },
+  {
+    "name": "Amir_Sh",
+    "subteam": "Presale - Inbound",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 86,
+    "team": "Presales"
+  },
+  {
+    "name": "Dorothy_A",
+    "subteam": "Presale - Outbound",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 86,
+    "team": "Presales"
+  },
+  {
+    "name": "Aditya_T",
+    "subteam": "WhatsApp",
+    "audits": 8,
+    "ncf": 0,
+    "cq": 85,
+    "team": "Presales"
+  },
+  {
+    "name": "Kavita_Di",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 0,
+    "cq": 79,
+    "team": "Presales"
+  },
+  {
+    "name": "Kavita_K",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 1,
+    "cq": 73,
+    "team": "Presales"
+  },
+  {
+    "name": "Khushboo_Y",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 1,
+    "cq": 73,
+    "team": "Presales"
+  },
+  {
+    "name": "Preeti_Ya",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 1,
+    "cq": 70,
+    "team": "Presales"
+  },
+  {
+    "name": "Swastika_Sa",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 1,
+    "cq": 70,
+    "team": "Presales"
+  },
+  {
+    "name": "Chaitali_Ma",
+    "subteam": "Clive",
+    "audits": 6,
+    "ncf": 2,
+    "cq": 63,
+    "team": "Presales"
+  }
+];
+const POSTSALES_AGENTS = [
+  {
+    "name": "Mallika_R",
+    "subteam": "Experience",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 98,
+    "team": "Postsales"
+  },
+  {
+    "name": "Tisha_J",
+    "subteam": "Experience",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 96,
+    "team": "Postsales"
+  },
+  {
+    "name": "Akbar_M",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 96,
+    "team": "Postsales"
+  },
+  {
+    "name": "Shruthiparmar_D",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 96,
+    "team": "Postsales"
+  },
+  {
+    "name": "Juwairiya_A",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Postsales"
+  },
+  {
+    "name": "Rayeesa_S",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 95,
+    "team": "Postsales"
+  },
+  {
+    "name": "Khushi_J",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 94,
+    "team": "Postsales"
+  },
+  {
+    "name": "Sadiqbasha_I",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 94,
+    "team": "Postsales"
+  },
+  {
+    "name": "Sanjana_J",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Postsales"
+  },
+  {
+    "name": "Kareemullah_M",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 93,
+    "team": "Postsales"
+  },
+  {
+    "name": "Karun_G",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 91,
+    "team": "Postsales"
+  },
+  {
+    "name": "Ansari_S",
+    "subteam": "Email",
+    "audits": 7,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Postsales"
+  },
+  {
+    "name": "Jinal_K",
+    "subteam": "Email",
+    "audits": 7,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Postsales"
+  },
+  {
+    "name": "Asrarahmed_P",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 90,
+    "team": "Postsales"
+  },
+  {
+    "name": "Ghouse_M",
+    "subteam": "Email",
+    "audits": 7,
+    "ncf": 0,
+    "cq": 89,
+    "team": "Postsales"
+  },
+  {
+    "name": "Kruti_P",
+    "subteam": "Experience",
+    "audits": 5,
+    "ncf": 0,
+    "cq": 89,
+    "team": "Postsales"
+  },
+  {
+    "name": "Aqsa_A",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 88,
+    "team": "Postsales"
+  },
+  {
+    "name": "Preethi_V",
+    "subteam": "Email",
+    "audits": 7,
+    "ncf": 0,
+    "cq": 87,
+    "team": "Postsales"
+  },
+  {
+    "name": "Adeeb_H",
+    "subteam": "Post Sale - Outbound",
+    "audits": 25,
+    "ncf": 0,
+    "cq": 86,
+    "team": "Postsales"
+  },
+  {
+    "name": "Oindrilla_D",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 1,
+    "cq": 84,
+    "team": "Postsales"
+  },
+  {
+    "name": "Madhu_D",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 10,
+    "ncf": 0,
+    "cq": 84,
+    "team": "Postsales"
+  },
+  {
+    "name": "Theja_B",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 1,
+    "cq": 83,
+    "team": "Postsales"
+  },
+  {
+    "name": "John_F",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 25,
+    "ncf": 2,
+    "cq": 80,
+    "team": "Postsales"
+  },
+  {
+    "name": "Nitheesh_R",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 1,
+    "cq": 79,
+    "team": "Postsales"
+  },
+  {
+    "name": "Surbhi_A",
+    "subteam": "Email",
+    "audits": 7,
+    "ncf": 0,
+    "cq": 77,
+    "team": "Postsales"
+  },
+  {
+    "name": "Muzakir_N",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 2,
+    "cq": 75,
+    "team": "Postsales"
+  },
+  {
+    "name": "Mazia_N",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 2,
+    "cq": 73,
+    "team": "Postsales"
+  },
+  {
+    "name": "Chanchal_S",
+    "subteam": "Post Sale - Inbound",
+    "audits": 25,
+    "ncf": 3,
+    "cq": 69,
+    "team": "Postsales"
+  },
+  {
+    "name": "Ajmal_A",
+    "subteam": "Experience",
+    "audits": 5,
+    "ncf": 2,
+    "cq": 60,
+    "team": "Postsales"
+  },
+  {
+    "name": "Ankita_R",
+    "subteam": "Experience",
+    "audits": 5,
+    "ncf": 1,
+    "cq": 58,
+    "team": "Postsales"
+  },
+  {
+    "name": "Vyas_N",
+    "subteam": "Post Sale - Whatsapp",
+    "audits": 10,
+    "ncf": 2,
+    "cq": 56,
+    "team": "Postsales"
+  }
+];
 
-const PS_TOTALS  = {"audits": 302, "ncf": 5, "cq": 90, "agents": 41, "zero_ncf": 37};
-const POS_TOTALS = {"audits": 561, "ncf": 18, "cq": 86, "agents": 32, "zero_ncf": 21};
+const PS_TOTALS  = {"audits": 308, "ncf": 6, "cq": 90, "agents": 42, "zero_ncf": 37};
+const POS_TOTALS = {"audits": 555, "ncf": 17, "cq": 86, "agents": 31, "zero_ncf": 21};
 
 const PS_SUBTEAMS  = {
   "Clive": {
-    "cq": 83,
-    "audits": 60,
-    "ncf": 5,
-    "agents": 10
+    "cq": 82,
+    "audits": 66,
+    "ncf": 6,
+    "agents": 11
   },
   "Presale - Inbound": {
     "cq": 93,
@@ -67,12 +653,6 @@ const POS_SUBTEAMS = {
     "audits": 35,
     "ncf": 0,
     "agents": 5
-  },
-  "Clive": {
-    "cq": 70,
-    "audits": 6,
-    "ncf": 1,
-    "agents": 1
   }
 };
 
